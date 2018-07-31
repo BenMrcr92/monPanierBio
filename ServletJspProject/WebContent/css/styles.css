@@ -1,0 +1,19 @@
+/* Redefinition d'un style bootstrap pour forcer affichage en majuscules des liens de menu */
+.nav-item {
+	text-transform: uppercase;
+}
+
+/* Application d'une marge pour decoler les titres de la barre de navigation */
+h1 {
+	margin-top: 20px;
+}
+
+/* Les label des champs de saisie de formulaires seront en gras */
+label {
+	font-weight: bold;
+}
+
+p.cite {
+	font-size: 60pt;
+	font-family: cursive;
+}

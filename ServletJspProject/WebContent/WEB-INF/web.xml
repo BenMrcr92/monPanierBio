@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>ServletJspProject</display-name>
+
+	<!-- Declaration des servlets, un nom et là où elle se trouve dans les sources 
+		Java -->
+	<servlet>
+		<servlet-name>WelcomeServlet</servlet-name>
+		<servlet-class>io.readresolve.servletjspproject.servlets.WelcomeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GoToCreateProductServlet</servlet-name>
+		<servlet-class>io.readresolve.servletjspproject.servlets.GoToCreateProductServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CreateProductServlet</servlet-name>
+		<servlet-class>io.readresolve.servletjspproject.servlets.CreateProductServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Error404Servlet</servlet-name>
+		<servlet-class>io.readresolve.servletjspproject.servlets.Error404Servlet</servlet-class>
+	</servlet>
+
+	<!-- Declaration des mappings de servlets, comment on peut y accéder depuis 
+		le navigateur en précisant le pattern specifie dans l'url -->
+	<servlet-mapping>
+		<servlet-name>WelcomeServlet</servlet-name>
+		<url-pattern>/welcome</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GoToCreateProductServlet</servlet-name>
+		<url-pattern>/goToCreateProduct</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreateProductServlet</servlet-name>
+		<url-pattern>/createProduct</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Error404Servlet</servlet-name>
+		<url-pattern>/error404</url-pattern>
+	</servlet-mapping>
+
+	<!-- On déclare la page d'accueil si l'utilisateur ne la précise pas dans 
+		l'URL qu'il appelle depui son navigateur -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- Declaration d'une resource personnalisee (ici Servlet) en cas d'erreur 404 (not found).
+	 On peut declarer des pages/servlets personnalisees pour tous les codes erreur HTTP. -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error404</location>
+	</error-page>
+</web-app>
